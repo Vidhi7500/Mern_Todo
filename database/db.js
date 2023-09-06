@@ -5,8 +5,10 @@ dotenv.config();
 
 
 const Connection = () => {
-    const MONGODB_URI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.147rv0f.mongodb.net/?retryWrites=true&w=majority
-`;
+    //const MONGODB_URI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.147rv0f.mongodb.net/?retryWrites=true&w=majority
+//`;
+
+    const MONGODB_URI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.8uitzd4.mongodb.net/?retryWrites=true&w=majority`;
 
     mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
 
@@ -19,7 +21,7 @@ const Connection = () => {
     });
 
     mongoose.connection.on("error", () => {
-      console.log("error whiile connecting ", error.message);
+      console.log("error while connecting ", error.message);
     });
 }
 
